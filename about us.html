@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Navpreet's Book Store</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #f1c40f;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: url('images/stack-of-books-on-a-brown-background-concept-for-world-book-day-photo.jpg');
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* About Content */
+        .about-content {
+            padding: 60px 0;
+        }
+        
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 40px 0;
+            background-color: #ecf0f1;
+        }
+        
+        .team h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 20px;
+        }
+        
+        .member-info h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .member-info p {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        /* Values Section */
+        .values {
+            padding: 60px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .value-card i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #f1c40f;
+        }
+        
+        .copyright {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            color: #bdc3c7;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            .about-section {
+                flex-direction: column;
+            }
+            
+            .about-text, .about-image {
+                order: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Navpreet's Book Store</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Books</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Our Story</h1>
+            <p>Discover the passion behind Navpreet's Book Store</p>
+        </div>
+    </section>
+    
+    <section class="about-content">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-text">
+                    <h2>Who We Are</h2>
+                    <p>Welcome to Navpreet's Book Store, your premier destination for books of all genres. Founded in 2023, we've grown from a small local bookstore to a thriving online community of book lovers.</p>
+                    <p>Our mission is simple: to connect readers with the books they'll love and to foster a lifelong passion for reading. We believe in the transformative power of books and their ability to educate, entertain, and inspire.</p>
+                    <p>What sets us apart is our carefully curated selection, personalized recommendations, and commitment to supporting both established and emerging authors.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Bookstore interior">
+                </div>
+            </div>
+            
+            <div class="about-section">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Reading a book">
+                </div>
+                <div class="about-text">
+                    <h2>Our Journey</h2>
+                    <p>It all began when our founder, Navpreet Singh, noticed how difficult it was to find quality book recommendations online. Most platforms focused solely on bestsellers, leaving many wonderful books undiscovered.</p>
+                    <p>We started as a physical bookstore in [Location] with just 500 titles. The response from our local community was overwhelming, and within 2023 years, we expanded to our online platform to serve readers worldwide.</p>
+                    <p>Today, we're proud to offer over titles across 100 categories, with new books added daily. But despite our growth, we've never lost sight of our original vision: to be a bookstore that feels like home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="team">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Team member">
+                    <div class="member-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>Founder & CEO</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team member">
+                    <div class="member-info">
+                        <h3>Michael Chen</h3>
+                        <p>Head of Operations</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Team member">
+                    <div class="member-info">
+                        <h3>Emily Rodriguez</h3>
+                        <p>Head Buyer</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Team member">
+                    <div class="member-info">
+                        <h3>David Wilson</h3>
+                        <p>Customer Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="values">
+        <div class="container">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Love for Literature</h3>
+                    <p>We're passionate about books and believe in their power to change lives. Every book in our collection is carefully selected by our team of bibliophiles.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Focus</h3>
+                    <p>We're more than a bookstore - we're a community. Through book clubs, author events, and reading challenges, we bring readers together.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainability</h3>
+                    <p>We're committed to eco-friendly practices, from our packaging to our supply chain. We also promote second-hand books to reduce waste.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Exceptional Service</h3>
+                    <p>Your satisfaction is our priority. Our team goes above and beyond to help you find your next favorite book.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="books.html">Browse Books</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-goodreads"></i> Goodreads</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Navpreet's Book Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

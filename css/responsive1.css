@@ -1,0 +1,57 @@
+/* Tablet View */
+@media (max-width: 992px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-form, .contact-info {
+        width: 100%;
+    }
+    
+    .footer-content {
+        flex-wrap: wrap;
+    }
+    
+    .footer-section {
+        flex: 1 1 45%;
+        margin-bottom: 30px;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .contact-hero h1 {
+        font-size: 36px;
+    }
+    
+    .contact-hero p {
+        font-size: 18px;
+    }
+    
+    .info-item {
+        flex-direction: column;
+    }
+    
+    .info-item i {
+        margin-bottom: 10px;
+    }
+    
+    .footer-section {
+        flex: 1 1 100%;
+    }
+}
+
+/* Small Mobile View */
+@media (max-width: 480px) {
+    .contact-hero h1 {
+        font-size: 28px;
+    }
+    
+    .contact-hero p {
+        font-size: 16px;
+    }
+    
+    .contact-form, .contact-info {
+        padding: 20px;
+    }
+}
